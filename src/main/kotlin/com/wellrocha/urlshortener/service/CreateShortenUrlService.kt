@@ -1,4 +1,4 @@
-package com.wellrocha.urlshortener.services
+package com.wellrocha.urlshortener.service
 
 import com.wellrocha.urlshortener.dto.ShortenUrlRequest
 import com.wellrocha.urlshortener.dto.ShortenUrlResponse

@@ -9,7 +9,7 @@ import java.util.*
 
 @Service
 class CreateShortenUrlService(
-    val repository: ShortenedUrlRepository,
+    private val repository: ShortenedUrlRepository,
 ) {
     fun execute(request: ShortenUrlRequest): ShortenUrlResponse {
         val shortenedUrl = ShortenedUrl(request.id, request.url, Date())

@@ -14,7 +14,6 @@ class CreateShortenUrlService(
     fun execute(request: ShortenUrlRequest): ShortenUrlResponse {
         val shortenedUrl = ShortenedUrl(request.id, request.url, Date())
         repository.save(shortenedUrl)
-
-        return ShortenUrlResponse(request.id, request.url, shortenedUrl.createdAt)
+        return ShortenUrlResponse(request.id)
     }
 }

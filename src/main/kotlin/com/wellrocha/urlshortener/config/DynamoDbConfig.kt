@@ -29,11 +29,14 @@ class DynamoDbConfig {
     @Value("\${aws.region}")
     lateinit var region: String
 
+    @Value("\${aws.endpoint}")
+    lateinit var endpoint: String
+
     @Bean
     fun amazonDynamoDB(): AmazonDynamoDB {
         return AmazonDynamoDBClientBuilder
             .standard()
-            .withRegion(region)
+            .withEndpointConfiguration(AwsClientBuilder.EndpointConfiguration(endpoint, region))
             .withCredentials(AWSStaticCredentialsProvider(BasicAWSCredentials(accessKey, secretKey)))
             .build()
     }
